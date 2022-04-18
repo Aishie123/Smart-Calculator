@@ -7,14 +7,14 @@
 
     <fragment
         android:id="@+id/nav_perimeter"
-        android:name="mcm.edu.ph.dones_physicscalculator.ui.perimeter.PerimeterFragment"
-        android:label="@string/menu_gallery"
+        android:name="mcm.edu.ph.dones_physicscalculator.View.Fragments.PerimeterFragment"
+        android:label="@string/menu_perimeter"
         tools:layout="@layout/fragment_perimeter" />
 
     <fragment
-        android:id="@+id/nav_surfaceArea"
-        android:name="mcm.edu.ph.dones_physicscalculator.ui.surfaceArea.SurfaceAreaFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_surfacearea" />
+        android:id="@+id/nav_area"
+        android:name="mcm.edu.ph.dones_physicscalculator.View.Fragments.AreaFragment"
+        android:label="@string/menu_area"
+        tools:layout="@layout/fragment_area" />
 
 </navigation>
