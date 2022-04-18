@@ -1,10 +1,12 @@
-package mcm.edu.ph.dones_physicscalculator;
+package mcm.edu.ph.dones_physicscalculator.View.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import mcm.edu.ph.dones_physicscalculator.R;
 
 public class HomeActivity extends AppCompatActivity {
 

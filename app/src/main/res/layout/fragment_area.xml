@@ -4,24 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".View.Fragments.PerimeterFragment"
-    tools:layout_editor_absoluteX="7dp"
-    tools:layout_editor_absoluteY="0dp">
+    tools:context=".View.Fragments.AreaFragment">
 
     <pl.droidsonroids.gif.GifImageView
-        android:id="@+id/gifPerimeter"
+        android:id="@+id/gifArea"
         android:layout_width="155dp"
         android:layout_height="180dp"
         android:layout_marginTop="148dp"
         android:src="@drawable/gif_perimeter"
         android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="@+id/dropdownPerimeter"
+        app:layout_constraintEnd_toEndOf="@+id/dropdownArea"
         app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="@+id/dropdownPerimeter"
-        app:layout_constraintTop_toBottomOf="@+id/dropdownPerimeter" />
+        app:layout_constraintStart_toStartOf="@+id/dropdownArea"
+        app:layout_constraintTop_toBottomOf="@+id/dropdownArea" />
 
     <View
-        android:id="@+id/perimeterSquare"
+        android:id="@+id/areaSquare"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginTop="28dp"
@@ -32,11 +30,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etPerimeterX1"
+        app:layout_constraintTop_toBottomOf="@+id/etAreaX1"
         app:layout_constraintVertical_bias="0.0" />
 
     <View
-        android:id="@+id/perimeterSqBracket1"
+        android:id="@+id/areaSqBracket1"
         android:layout_width="5dp"
         android:layout_height="140dp"
         android:layout_marginStart="52dp"
@@ -44,36 +42,36 @@
         android:background="@drawable/bracket"
         android:scaleType="fitXY"
         android:visibility="invisible"
-        app:layout_constraintStart_toEndOf="@+id/perimeterSquare"
-        app:layout_constraintTop_toTopOf="@+id/perimeterSquare" />
+        app:layout_constraintStart_toEndOf="@+id/areaSquare"
+        app:layout_constraintTop_toTopOf="@+id/areaSquare" />
 
     <View
-        android:id="@+id/perimeterSqBracket2"
+        android:id="@+id/areaSqBracket2"
         android:layout_width="20dp"
         android:layout_height="5dp"
         android:layout_marginStart="36dp"
         android:background="@drawable/bracket"
         android:scaleType="fitXY"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/perimeterSqBracket1"
-        app:layout_constraintEnd_toEndOf="@+id/perimeterSqBracket1"
+        app:layout_constraintBottom_toTopOf="@+id/areaSqBracket1"
+        app:layout_constraintEnd_toEndOf="@+id/areaSqBracket1"
         app:layout_constraintHorizontal_bias="1"
-        app:layout_constraintStart_toEndOf="@+id/perimeterSquare" />
+        app:layout_constraintStart_toEndOf="@+id/areaSquare" />
 
     <View
-        android:id="@+id/perimeterSqBracket3"
+        android:id="@+id/areaSqBracket3"
         android:layout_width="20dp"
         android:layout_height="5dp"
         android:background="@drawable/bracket"
         android:scaleType="fitXY"
         android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="@+id/perimeterSqBracket1"
+        app:layout_constraintEnd_toEndOf="@+id/areaSqBracket1"
         app:layout_constraintHorizontal_bias="1"
-        app:layout_constraintStart_toEndOf="@+id/gifPerimeter"
-        app:layout_constraintTop_toBottomOf="@+id/perimeterSqBracket1" />
+        app:layout_constraintStart_toEndOf="@+id/gifArea"
+        app:layout_constraintTop_toBottomOf="@+id/areaSqBracket1" />
 
     <TextView
-        android:id="@+id/txtPerimeterSqSide"
+        android:id="@+id/txtAreaSqSide"
         android:layout_width="65dp"
         android:layout_height="41dp"
         android:background="#FFFFFF"
@@ -84,13 +82,13 @@
         android:textColor="#000000"
         android:textSize="18sp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/perimeterSqBracket1"
-        app:layout_constraintEnd_toEndOf="@+id/perimeterSqBracket1"
-        app:layout_constraintStart_toStartOf="@+id/perimeterSqBracket1"
-        app:layout_constraintTop_toTopOf="@+id/perimeterSqBracket1" />
+        app:layout_constraintBottom_toBottomOf="@+id/areaSqBracket1"
+        app:layout_constraintEnd_toEndOf="@+id/areaSqBracket1"
+        app:layout_constraintStart_toStartOf="@+id/areaSqBracket1"
+        app:layout_constraintTop_toTopOf="@+id/areaSqBracket1" />
 
     <View
-        android:id="@+id/perimeterRectangle"
+        android:id="@+id/areaRectangle"
         android:layout_width="250dp"
         android:layout_height="150dp"
         android:layout_marginTop="28dp"
@@ -101,78 +99,78 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etPerimeterX1"
+        app:layout_constraintTop_toBottomOf="@+id/etAreaX1"
         app:layout_constraintVertical_bias="0.0" />
 
     <View
-        android:id="@+id/perimeterReBracket1"
+        android:id="@+id/areaReBracket1"
         android:layout_width="5dp"
         android:layout_height="150dp"
         android:layout_marginStart="30dp"
         android:background="@drawable/bracket"
         android:scaleType="fitXY"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/perimeterRectangle"
-        app:layout_constraintStart_toEndOf="@+id/perimeterRectangle"
-        app:layout_constraintTop_toTopOf="@+id/perimeterRectangle" />
+        app:layout_constraintBottom_toBottomOf="@+id/areaRectangle"
+        app:layout_constraintStart_toEndOf="@+id/areaRectangle"
+        app:layout_constraintTop_toTopOf="@+id/areaRectangle" />
 
     <View
-        android:id="@+id/perimeterReBracket2"
+        android:id="@+id/areaReBracket2"
         android:layout_width="20dp"
         android:layout_height="5dp"
         android:background="@drawable/bracket"
         android:scaleType="fitXY"
         android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="@+id/txtPerimeterSqSide"
-        app:layout_constraintEnd_toStartOf="@+id/perimeterReBracket1"
-        app:layout_constraintTop_toTopOf="@+id/perimeterReBracket1" />
+        app:layout_constraintEnd_toEndOf="@+id/txtAreaSqSide"
+        app:layout_constraintEnd_toStartOf="@+id/areaReBracket1"
+        app:layout_constraintTop_toTopOf="@+id/areaReBracket1" />
 
     <View
-        android:id="@+id/perimeterReBracket3"
+        android:id="@+id/areaReBracket3"
         android:layout_width="20dp"
         android:layout_height="5dp"
         android:background="@drawable/bracket"
         android:scaleType="fitXY"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/perimeterReBracket1"
-        app:layout_constraintEnd_toEndOf="@+id/txtPerimeterSqSide"
-        app:layout_constraintEnd_toStartOf="@+id/perimeterReBracket1" />
+        app:layout_constraintBottom_toBottomOf="@+id/areaReBracket1"
+        app:layout_constraintEnd_toEndOf="@+id/txtAreaSqSide"
+        app:layout_constraintEnd_toStartOf="@+id/areaReBracket1" />
 
     <View
-        android:id="@+id/perimeterReBracket4"
+        android:id="@+id/areaReBracket4"
         android:layout_width="250dp"
         android:layout_height="5dp"
         android:layout_marginTop="28dp"
         android:background="@drawable/bracket"
         android:scaleType="fitXY"
         android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="@+id/perimeterRectangle"
-        app:layout_constraintStart_toStartOf="@+id/perimeterRectangle"
-        app:layout_constraintTop_toBottomOf="@+id/perimeterRectangle" />
+        app:layout_constraintEnd_toEndOf="@+id/areaRectangle"
+        app:layout_constraintStart_toStartOf="@+id/areaRectangle"
+        app:layout_constraintTop_toBottomOf="@+id/areaRectangle" />
 
     <View
-        android:id="@+id/perimeterReBracket5"
+        android:id="@+id/areaReBracket5"
         android:layout_width="5dp"
         android:layout_height="15dp"
         android:background="@drawable/bracket"
         android:scaleType="fitXY"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/perimeterReBracket4"
-        app:layout_constraintEnd_toEndOf="@+id/perimeterReBracket4" />
+        app:layout_constraintBottom_toTopOf="@+id/areaReBracket4"
+        app:layout_constraintEnd_toEndOf="@+id/areaReBracket4" />
 
     <View
-        android:id="@+id/perimeterReBracket6"
+        android:id="@+id/areaReBracket6"
         android:layout_width="5dp"
         android:layout_height="15dp"
         android:background="@drawable/bracket"
         android:scaleType="fitXY"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/perimeterReBracket4"
-        app:layout_constraintStart_toStartOf="@+id/perimeterReBracket4" />
+        app:layout_constraintBottom_toTopOf="@+id/areaReBracket4"
+        app:layout_constraintStart_toStartOf="@+id/areaReBracket4" />
 
     <TextView
-        android:id="@+id/txtPerimeterReWidth"
-        android:layout_width="65dp"
+        android:id="@+id/txtAreaReWidth"
+        android:layout_width="wrap_content"
         android:layout_height="35dp"
         android:background="#FFFFFF"
         android:fontFamily="@font/poppins_bold"
@@ -182,15 +180,14 @@
         android:textColor="#000000"
         android:textSize="14sp"
         android:visibility="invisible"
-
-        app:layout_constraintBottom_toBottomOf="@+id/perimeterReBracket1"
-        app:layout_constraintEnd_toEndOf="@+id/perimeterReBracket1"
-        app:layout_constraintStart_toStartOf="@+id/perimeterReBracket1"
-        app:layout_constraintTop_toTopOf="@+id/perimeterReBracket1"
+        app:layout_constraintBottom_toBottomOf="@+id/areaReBracket1"
+        app:layout_constraintEnd_toEndOf="@+id/areaReBracket1"
+        app:layout_constraintStart_toStartOf="@+id/areaReBracket1"
+        app:layout_constraintTop_toTopOf="@+id/areaReBracket1"
         app:layout_constraintVertical_bias="0.504" />
 
     <TextView
-        android:id="@+id/txtPerimeterReLength"
+        android:id="@+id/txtAreaReLength"
         android:layout_width="55dp"
         android:layout_height="35dp"
         android:background="#FFFFFF"
@@ -201,14 +198,14 @@
         android:textColor="#000000"
         android:textSize="14sp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/perimeterReBracket4"
-        app:layout_constraintEnd_toEndOf="@+id/perimeterReBracket4"
+        app:layout_constraintBottom_toBottomOf="@+id/areaReBracket4"
+        app:layout_constraintEnd_toEndOf="@+id/areaReBracket4"
         app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="@+id/perimeterReBracket4"
-        app:layout_constraintTop_toTopOf="@+id/perimeterReBracket4" />
+        app:layout_constraintStart_toStartOf="@+id/areaReBracket4"
+        app:layout_constraintTop_toTopOf="@+id/areaReBracket4" />
 
     <View
-        android:id="@+id/perimeterCircle"
+        android:id="@+id/areaCircle"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginTop="28dp"
@@ -219,24 +216,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etPerimeterX1"
+        app:layout_constraintTop_toBottomOf="@+id/etAreaX1"
         app:layout_constraintVertical_bias="0.0" />
 
     <View
-        android:id="@+id/perimeterCiBracket1"
+        android:id="@+id/areaCiBracket1"
         android:layout_width="78dp"
         android:layout_height="7dp"
         android:layout_marginStart="72dp"
         android:background="@drawable/bracket"
         android:scaleType="fitXY"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/perimeterCircle"
-        app:layout_constraintEnd_toEndOf="@+id/perimeterCircle"
-        app:layout_constraintStart_toStartOf="@+id/perimeterCircle"
-        app:layout_constraintTop_toTopOf="@+id/perimeterCircle" />
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/areaCircle"
+        app:layout_constraintEnd_toEndOf="@+id/areaCircle"
+        app:layout_constraintStart_toStartOf="@+id/areaCircle"
+        app:layout_constraintTop_toTopOf="@+id/areaCircle" />
 
     <TextView
-        android:id="@+id/txtPerimeterCiRadius"
+        android:id="@+id/txtAreaCiRadius"
         android:layout_width="71dp"
         android:layout_height="28dp"
         android:fontFamily="@font/poppins_bold"
@@ -244,14 +241,14 @@
         android:text="Radius"
         android:textColor="#000000"
         android:textSize="14sp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/perimeterCiBracket1"
-        app:layout_constraintEnd_toEndOf="@+id/gifPerimeter"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/areaCiBracket1"
+        app:layout_constraintEnd_toEndOf="@+id/gifArea"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/perimeterCiBracket1" />
+        app:layout_constraintStart_toStartOf="@+id/areaCiBracket1" />
 
     <Spinner
-        android:id="@+id/dropdownPerimeter"
+        android:id="@+id/dropdownArea"
         android:layout_width="269dp"
         android:layout_height="48dp"
         android:layout_marginTop="44dp"
@@ -264,39 +261,40 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
-        android:id="@+id/txtPerimeterFormula"
+        android:id="@+id/txtAreaFormula"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:fontFamily="@font/poppins_light"
         android:gravity="center"
+        android:lines="1"
         android:padding="5dp"
-        app:autoSizeTextType="uniform"
         android:text="Formula"
         android:textSize="18sp"
         android:visibility="visible"
-        android:lines="1"
-        app:layout_constraintEnd_toStartOf="@+id/txtPerimeterResult"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintEnd_toStartOf="@+id/txtAreaResult"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPerimeter" />
+        app:layout_constraintTop_toBottomOf="@+id/txtArea" />
 
     <TextView
-        android:id="@+id/txtPerimeter"
-        android:layout_width="273dp"
+        android:id="@+id/txtArea"
+        android:layout_width="wrap_content"
         android:layout_height="36dp"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/poppins_extrabold"
         android:gravity="center"
         android:padding="5dp"
-        android:text="Perimeter: "
+        android:text="Area: "
+        android:lines="1"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/dropdownPerimeter"
-        app:layout_constraintStart_toStartOf="@+id/dropdownPerimeter"
-        app:layout_constraintTop_toBottomOf="@+id/dropdownPerimeter" />
+        app:layout_constraintEnd_toEndOf="@+id/dropdownArea"
+        app:layout_constraintStart_toStartOf="@+id/dropdownArea"
+        app:layout_constraintTop_toBottomOf="@+id/dropdownArea" />
 
     <EditText
-        android:id="@+id/etPerimeterX1"
+        android:id="@+id/etAreaX1"
         android:layout_width="50dp"
         android:layout_height="48dp"
         android:layout_marginTop="8dp"
@@ -306,13 +304,13 @@
         android:hint="X1"
         android:inputType="numberDecimal"
         android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@+id/etPerimeterX2"
+        app:layout_constraintEnd_toStartOf="@+id/etAreaX2"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/txtPerimeter"
-        app:layout_constraintTop_toBottomOf="@+id/txtPerimeterFormula" />
+        app:layout_constraintStart_toStartOf="@+id/txtArea"
+        app:layout_constraintTop_toBottomOf="@+id/txtAreaFormula" />
 
     <EditText
-        android:id="@+id/etPerimeterX2"
+        android:id="@+id/etAreaX2"
         android:layout_width="50dp"
         android:layout_height="48dp"
         android:ems="10"
@@ -321,13 +319,13 @@
         android:hint="X2"
         android:inputType="numberDecimal"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/txtPerimeter"
+        app:layout_constraintEnd_toEndOf="@+id/txtArea"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/etPerimeterX1"
-        app:layout_constraintTop_toTopOf="@+id/etPerimeterX1" />
+        app:layout_constraintStart_toEndOf="@+id/etAreaX1"
+        app:layout_constraintTop_toTopOf="@+id/etAreaX1" />
 
     <Button
-        android:id="@+id/btnPerimeterSolve"
+        android:id="@+id/btnAreaSolve"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
@@ -335,13 +333,13 @@
         android:fontFamily="@font/poppins_bold"
         android:gravity="center"
         android:text="Solve"
-        app:layout_constraintEnd_toEndOf="@+id/gifPerimeter"
+        app:layout_constraintEnd_toEndOf="@+id/gifArea"
         app:layout_constraintHorizontal_bias="0.507"
-        app:layout_constraintStart_toStartOf="@+id/gifPerimeter"
-        app:layout_constraintTop_toBottomOf="@+id/gifPerimeter" />
+        app:layout_constraintStart_toStartOf="@+id/gifArea"
+        app:layout_constraintTop_toBottomOf="@+id/gifArea" />
 
     <Button
-        android:id="@+id/btnPerimeterRestart"
+        android:id="@+id/btnAreaRestart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -349,26 +347,95 @@
         android:fontFamily="@font/poppins_bold"
         android:gravity="center"
         android:text="Restart"
-        app:layout_constraintEnd_toEndOf="@+id/btnPerimeterSolve"
+        app:layout_constraintEnd_toEndOf="@+id/btnAreaSolve"
         app:layout_constraintHorizontal_bias="0.461"
-        app:layout_constraintStart_toStartOf="@+id/btnPerimeterSolve"
-        app:layout_constraintTop_toBottomOf="@+id/btnPerimeterSolve" />
+        app:layout_constraintStart_toStartOf="@+id/btnAreaSolve"
+        app:layout_constraintTop_toBottomOf="@+id/btnAreaSolve" />
 
     <TextView
-        android:id="@+id/txtPerimeterResult"
+        android:id="@+id/txtAreaResult"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:background="#FFFFFF"
         android:fontFamily="@font/poppins_semibold"
+        android:lines="1"
         android:padding="5dp"
         android:text="Result"
         android:textSize="18sp"
         android:visibility="gone"
-        android:lines="1"
         app:autoSizeTextType="uniform"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/txtPerimeterFormula"
-        app:layout_constraintTop_toTopOf="@+id/txtPerimeterFormula" />
+        app:layout_constraintStart_toEndOf="@+id/txtAreaFormula"
+        app:layout_constraintTop_toTopOf="@+id/txtAreaFormula" />
+
+    <ImageView
+        android:id="@+id/areaEqTriangle"
+        android:layout_width="193dp"
+        android:layout_height="185dp"
+        android:src="@drawable/triangle"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etAreaX1"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/txtAreaEqTriSide1"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:background="#FFFFFF"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="Side"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/areaEqTriangle"
+        app:layout_constraintEnd_toEndOf="@+id/areaEqTriangle"
+        app:layout_constraintHorizontal_bias="0.815"
+        app:layout_constraintStart_toStartOf="@+id/areaEqTriangle"
+        app:layout_constraintTop_toTopOf="@+id/areaEqTriangle"
+        app:layout_constraintVertical_bias="0.546" />
+
+    <TextView
+        android:id="@+id/txtAreaEqTriSide2"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:background="#FFFFFF"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="Side"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/areaEqTriangle"
+        app:layout_constraintEnd_toEndOf="@+id/areaEqTriangle"
+        app:layout_constraintHorizontal_bias="0.184"
+        app:layout_constraintStart_toStartOf="@+id/areaEqTriangle"
+        app:layout_constraintTop_toTopOf="@+id/areaEqTriangle"
+        app:layout_constraintVertical_bias="0.546" />
+
+    <TextView
+        android:id="@+id/txtAreaEqTriSide3"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:background="#FFFFFF"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="Side"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/areaEqTriangle"
+        app:layout_constraintEnd_toEndOf="@+id/areaEqTriangle"
+        app:layout_constraintStart_toStartOf="@+id/areaEqTriangle"
+        app:layout_constraintTop_toTopOf="@+id/areaEqTriangle"
+        app:layout_constraintVertical_bias="0.98" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

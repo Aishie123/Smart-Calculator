@@ -17,8 +17,8 @@
             android:id="@+id/nav_perimeter"
             android:title="Perimeter" />
         <item
-            android:id="@+id/nav_surfaceArea"
-            android:title="Surface Area" />
+            android:id="@+id/nav_area"
+            android:title="Area" />
 
     </group>
 </menu>

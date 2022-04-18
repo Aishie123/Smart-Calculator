@@ -1,32 +1,27 @@
-package mcm.edu.ph.dones_physicscalculator;
+package mcm.edu.ph.dones_physicscalculator.View.Activities;
 
-import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.Menu;
 import android.widget.Toast;
 
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
-import com.google.flatbuffers.Constants;
 
 import androidx.annotation.NonNull;
 import androidx.core.view.MenuCompat;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
+import mcm.edu.ph.dones_physicscalculator.R;
 import mcm.edu.ph.dones_physicscalculator.databinding.ActivityMainBinding;
-import mcm.edu.ph.dones_physicscalculator.ui.perimeter.PerimeterFragment;
-import mcm.edu.ph.dones_physicscalculator.ui.surfaceArea.SurfaceAreaFragment;
+import mcm.edu.ph.dones_physicscalculator.View.Fragments.PerimeterFragment;
+import mcm.edu.ph.dones_physicscalculator.View.Fragments.AreaFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -40,19 +35,13 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        setSupportActionBar(binding.appBarMain.toolbar);
-        //binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
-            //@Override
-            //public void onClick(View view) {
-            //    Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-            //            .setAction("Action", null).show();
-           // }
-        //});
+        setSupportActionBar(findViewById(R.id.toolbar));
+
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-        mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_home, R.id.nav_perimeter, R.id.nav_surfaceArea)
+        mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_home, R.id.nav_perimeter, R.id.nav_area)
                 .setOpenableLayout(drawer)
                 .build();
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment_content_main);
@@ -65,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-
                 Fragment fragment = null;
                 androidx.fragment.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
 
@@ -75,9 +63,11 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(newIntent);
                         break;
 
-                    case (R.id.nav_perimeter): fragment = new PerimeterFragment(); break;
+                    case (R.id.nav_perimeter):
+                        fragment = new PerimeterFragment();
+                        break;
 
-                    case (R.id.nav_surfaceArea): fragment = new SurfaceAreaFragment(); break;
+                    case (R.id.nav_area): fragment = new AreaFragment(); break;
 
                     default:
                         Toast.makeText(MainActivity.this, "Item can't be opened",
@@ -104,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
     //    MenuCompat.setGroupDividerEnabled(menu, true);
     //    return true;
     //}
+
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);

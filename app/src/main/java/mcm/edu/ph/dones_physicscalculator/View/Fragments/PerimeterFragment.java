@@ -1,7 +1,6 @@
-package mcm.edu.ph.dones_physicscalculator.ui.perimeter;
+package mcm.edu.ph.dones_physicscalculator.View.Fragments;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -12,7 +11,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,10 +18,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 
-import java.text.DecimalFormat;
-
+import mcm.edu.ph.dones_physicscalculator.Calculation;
+import mcm.edu.ph.dones_physicscalculator.View.Activities.MainActivity;
 import mcm.edu.ph.dones_physicscalculator.R;
 import mcm.edu.ph.dones_physicscalculator.databinding.FragmentPerimeterBinding;
 import pl.droidsonroids.gif.GifImageView;
@@ -38,16 +35,15 @@ public class PerimeterFragment extends Fragment implements View.OnClickListener 
     private View root, perimeterSquare, squareBracket1, squareBracket2, squareBracket3,
             perimeterRectangle, rectangleBracket1, rectangleBracket2, rectangleBracket3, rectangleBracket4, rectangleBracket5, rectangleBracket6,
             perimeterCircle, circleBracket1;
-    private double result, dLength, dWidth;
     private Button btnSolve, btnRestart;
-    private int shapeType;
     private String TAG = "PerimeterFragment";
+    private double result, dLength, dWidth;
+    private int shapeType;
+    private final Calculation calc = new Calculation();
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        PerimeterViewModel perimeterViewModel =
-                new ViewModelProvider(this).get(PerimeterViewModel.class);
 
         binding = FragmentPerimeterBinding.inflate(inflater, container, false);
         root = binding.getRoot();
@@ -59,13 +55,12 @@ public class PerimeterFragment extends Fragment implements View.OnClickListener 
         btnSolve.setOnClickListener(this);
         btnRestart.setOnClickListener(this);
 
-        //final TextView textView = binding.textPerimeter;
-        //perimeterViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 
+    // initializing spinner
     private void initSpinnerFooter() {
-        String[] paths = {"square", "rectangle", "circle"};
+        String[] paths = {"Square", "Rectangle", "Circle"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, paths);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -120,21 +115,19 @@ public class PerimeterFragment extends Fragment implements View.OnClickListener 
     @Override
     public void onClick(View root) {
         switch (root.getId()) {
+
+            // if "Solve" button is pressed
             case R.id.btnPerimeterSolve:
-                txtResult.setVisibility(View.VISIBLE);
-                solvePerimeter();
+                solvePerimeter(); // calculates the perimeter
                 break;
+
+            // if "Restart" button is pressed
             case R.id.btnPerimeterRestart:
                 hideAll();
                 txtResult.setVisibility(View.GONE);
-                initSpinnerFooter();
+                initSpinnerFooter(); // initializes the spinner again
                 break;
         }
-    }
-
-    private double roundTwoDecimals(double d) {
-        DecimalFormat twoDForm = new DecimalFormat("#.##");
-        return Double.parseDouble(twoDForm.format(d));
     }
 
     @SuppressLint("SetTextI18n")
@@ -151,10 +144,11 @@ public class PerimeterFragment extends Fragment implements View.OnClickListener 
             switch (shapeType) {
 
                 case 1:
-                    result = getSqPerimeter(x1);
+                    result = calc.getSqPerimeter(x1);
                     txtFormula.setText( "4(" + sX1 + ")" );
                     txtSquareSide.setText(sX1);
                     showSquare();
+                    txtResult.setVisibility(View.VISIBLE);
                     break;
 
                 case 2:
@@ -167,34 +161,36 @@ public class PerimeterFragment extends Fragment implements View.OnClickListener 
                         String sX2 = etX2.getText().toString();
                         double x2 = Double.parseDouble(sX2);
 
-                        dWidth = getReWidth( x1, x2 );
-                        dLength = getReLength( x1, x2 );
-                        result = getRePerimeter( x1, x2 );
+                        dWidth = calc.getReWidth( x1, x2 );
+                        dLength = calc.getReLength( x1, x2 );
+                        result = calc.getRePerimeter( x1, x2 );
 
-                        txtFormula.setText("2(" + sX1 + " + " + sX2 + " )");
+                        txtFormula.setText("2(" + sX1 + " + " + sX2 + ")");
                         txtRectangleLength.setText(sX1);
                         txtRectangleWidth.setText(sX2);
 
                         ConstraintLayout.LayoutParams rectangle = (ConstraintLayout.LayoutParams)perimeterRectangle.getLayoutParams();
                         ConstraintLayout.LayoutParams width = (ConstraintLayout.LayoutParams)rectangleBracket1.getLayoutParams();
                         ConstraintLayout.LayoutParams length = (ConstraintLayout.LayoutParams)rectangleBracket4.getLayoutParams();
-                        rectangle.width = dpToPx(dLength, root.getContext());
-                        length.width = dpToPx(dLength, root.getContext());
-                        width.height = dpToPx(dWidth, root.getContext());
-                        rectangle.height = dpToPx(dWidth, root.getContext());
+                        rectangle.width = calc.dpToPx(dLength, root.getContext());
+                        length.width = calc.dpToPx(dLength, root.getContext());
+                        width.height = calc.dpToPx(dWidth, root.getContext());
+                        rectangle.height = calc.dpToPx(dWidth, root.getContext());
                         perimeterRectangle.setLayoutParams(rectangle);
                         rectangleBracket1.setLayoutParams(width);
                         rectangleBracket4.setLayoutParams(length);
 
                         showRectangle();
+                        txtResult.setVisibility(View.VISIBLE);
                     }
                     break;
 
                 case 3:
-                    result = getCircumference(x1);
+                    result = calc.getCircumference(x1);
                     txtFormula.setText( "2π(" + sX1 + ")" );
                     txtCircleRadius.setText(sX1);
                     showCircle();
+                    txtResult.setVisibility(View.VISIBLE);
                     break;
 
                 default:
@@ -206,31 +202,6 @@ public class PerimeterFragment extends Fragment implements View.OnClickListener 
             txtResult.setText("= " + result);
 
         }
-    }
-
-    public double getSqPerimeter( double s ) { return roundTwoDecimals( 4 * s ); }
-    public double getRePerimeter( double l, double w ) { return roundTwoDecimals( 2 * (l + w) ); }
-    public double getCircumference( double r ) { return roundTwoDecimals(2 * Math.PI * r); }
-
-    public double getReWidth ( double l, double w ){
-        double n;
-        if ( l > w ) { n = roundTwoDecimals((250 * w) / l); }
-        else if ( w > l ) { n = 150; }
-        else { n = 150; }
-        return n;
-    }
-
-    public double getReLength ( double l, double w ){
-        double n;
-        if ( l > w ) { n = 250; }
-        else if ( w > l ) { n = roundTwoDecimals( (150 * l) / w ); }
-        else { n = 150; }
-        return n;
-    }
-
-    public static int dpToPx(double dp, Context context) {
-        float density = context.getResources().getDisplayMetrics().density;
-        return Math.round((float) dp * density);
     }
 
     private void hideAll() {
@@ -299,6 +270,7 @@ public class PerimeterFragment extends Fragment implements View.OnClickListener 
     }
 
     private void initUI() {
+
         gifPerimeter = root.findViewById(R.id.gifPerimeter);
         spinner = root.findViewById(R.id.dropdownPerimeter);
         txtPerimeter = root.findViewById(R.id.txtPerimeter);
@@ -309,26 +281,33 @@ public class PerimeterFragment extends Fragment implements View.OnClickListener 
         btnRestart = root.findViewById(R.id.btnPerimeterRestart);
 
         perimeterSquare = root.findViewById(R.id.perimeterSquare);
-        squareBracket1 = root.findViewById(R.id.squareBracket1);
-        squareBracket2 = root.findViewById(R.id.squareBracket2);
-        squareBracket3 = root.findViewById(R.id.squareBracket3);
-        txtSquareSide = root.findViewById(R.id.txtSquareSide);
+        squareBracket1 = root.findViewById(R.id.perimeterSqBracket1);
+        squareBracket2 = root.findViewById(R.id.perimeterSqBracket2);
+        squareBracket3 = root.findViewById(R.id.perimeterSqBracket3);
+        txtSquareSide = root.findViewById(R.id.txtPerimeterSqSide);
 
         perimeterRectangle = root.findViewById(R.id.perimeterRectangle);
-        rectangleBracket1 = root.findViewById(R.id.rectangleBracket1);
-        rectangleBracket2 = root.findViewById(R.id.rectangleBracket2);
-        rectangleBracket3 = root.findViewById(R.id.rectangleBracket3);
-        rectangleBracket4 = root.findViewById(R.id.rectangleBracket4);
-        rectangleBracket5 = root.findViewById(R.id.rectangleBracket5);
-        rectangleBracket6 = root.findViewById(R.id.rectangleBracket6);
-        txtRectangleWidth = root.findViewById(R.id.txtRectangleWidth);
-        txtRectangleLength = root.findViewById(R.id.txtRectangleLength);
+        rectangleBracket1 = root.findViewById(R.id.perimeterReBracket1);
+        rectangleBracket2 = root.findViewById(R.id.perimeterReBracket2);
+        rectangleBracket3 = root.findViewById(R.id.perimeterReBracket3);
+        rectangleBracket4 = root.findViewById(R.id.perimeterReBracket4);
+        rectangleBracket5 = root.findViewById(R.id.perimeterReBracket5);
+        rectangleBracket6 = root.findViewById(R.id.perimeterReBracket6);
+        txtRectangleWidth = root.findViewById(R.id.txtPerimeterReWidth);
+        txtRectangleLength = root.findViewById(R.id.txtPerimeterReLength);
 
         perimeterCircle = root.findViewById(R.id.perimeterCircle);
-        circleBracket1 = root.findViewById(R.id.circleBracket1);
-        txtCircleRadius = root.findViewById(R.id.txtCircleRadius);
+        circleBracket1 = root.findViewById(R.id.perimeterCiBracket1);
+        txtCircleRadius = root.findViewById(R.id.txtPerimeterCiRadius);
 
         txtResult = root.findViewById(R.id.txtPerimeterResult);
+
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        ((MainActivity) getActivity()).getSupportActionBar().setTitle("Perimeter");
     }
 
     @Override
@@ -336,5 +315,7 @@ public class PerimeterFragment extends Fragment implements View.OnClickListener 
         super.onDestroyView();
         binding = null;
     }
+
+
 
 }
