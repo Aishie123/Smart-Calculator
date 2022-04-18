@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.perimeter.PerimeterFragment">
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gifPerimeter"
+        android:layout_width="155dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="152dp"
+        android:src="@drawable/gif_perimeter"
+        app:layout_constraintEnd_toEndOf="@+id/dropdownPerimeter"
+        app:layout_constraintStart_toStartOf="@+id/dropdownPerimeter"
+        app:layout_constraintTop_toBottomOf="@+id/dropdownPerimeter" />
+
+    <View
+        android:id="@+id/perimeterSquare"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/square"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etPerimeterX1" />
+
+    <View
+        android:id="@+id/squareBracket2"
+        android:layout_width="20dp"
+        android:layout_height="5dp"
+        android:layout_marginStart="36dp"
+        android:background="@drawable/bracket"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/squareBracket1"
+        app:layout_constraintEnd_toEndOf="@+id/squareBracket1"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/perimeterSquare" />
+
+    <View
+        android:id="@+id/squareBracket3"
+        android:layout_width="20dp"
+        android:layout_height="5dp"
+        android:background="@drawable/bracket"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="@+id/squareBracket1"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/gifPerimeter"
+        app:layout_constraintTop_toBottomOf="@+id/squareBracket1" />
+
+    <View
+        android:id="@+id/squareBracket1"
+        android:layout_width="5dp"
+        android:layout_height="140dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/bracket"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toEndOf="@+id/perimeterSquare"
+        app:layout_constraintTop_toTopOf="@+id/perimeterSquare" />
+
+    <TextView
+        android:id="@+id/txtSquareSide"
+        android:layout_width="65dp"
+        android:layout_height="41dp"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="Side"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/squareBracket1"
+        app:layout_constraintEnd_toEndOf="@+id/squareBracket1"
+        app:layout_constraintStart_toStartOf="@+id/squareBracket1"
+        app:layout_constraintTop_toTopOf="@+id/squareBracket1" />
+
+    <Spinner
+        android:id="@+id/dropdownPerimeter"
+        android:layout_width="269dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="68dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/txtPerimeterFormula"
+        android:layout_width="273dp"
+        android:layout_height="36dp"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="Formula"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/txtPerimeter"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/txtPerimeter"
+        app:layout_constraintTop_toBottomOf="@+id/txtPerimeter" />
+
+    <TextView
+        android:id="@+id/txtPerimeter"
+        android:layout_width="273dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="Perimeter: "
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/dropdownPerimeter"
+        app:layout_constraintStart_toStartOf="@+id/dropdownPerimeter"
+        app:layout_constraintTop_toBottomOf="@+id/dropdownPerimeter" />
+
+    <EditText
+        android:id="@+id/etPerimeterX1"
+        android:layout_width="50dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="X1"
+        android:inputType="numberDecimal"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/etPerimeterX2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/txtPerimeterFormula"
+        app:layout_constraintTop_toBottomOf="@+id/txtPerimeterFormula" />
+
+    <EditText
+        android:id="@+id/etPerimeterX2"
+        android:layout_width="50dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="X2"
+        android:inputType="numberDecimal"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/txtPerimeterFormula"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/etPerimeterX1"
+        app:layout_constraintTop_toTopOf="@+id/etPerimeterX1" />
+
+    <Button
+        android:id="@+id/btnPerimeterSolve"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:gravity="center"
+        android:text="Solve"
+        app:layout_constraintBottom_toTopOf="@+id/btnPerimeterRestart"
+        app:layout_constraintEnd_toEndOf="@+id/btnPerimeterRestart"
+        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintStart_toStartOf="@+id/btnPerimeterRestart" />
+
+    <Button
+        android:id="@+id/btnPerimeterRestart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="68dp"
+        android:gravity="center"
+        android:text="Restart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txtPerimeterResult"
+        android:layout_width="69dp"
+        android:layout_height="35dp"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="Result"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/perimeterSquare"
+        app:layout_constraintEnd_toEndOf="@+id/perimeterSquare"
+        app:layout_constraintStart_toStartOf="@+id/perimeterSquare"
+        app:layout_constraintTop_toTopOf="@+id/perimeterSquare" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

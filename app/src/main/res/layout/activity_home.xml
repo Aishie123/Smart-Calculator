@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity">
+
+    <Button
+        android:id="@+id/btnAlgebra"
+        android:layout_width="239dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="50dp"
+        android:text="Algebra"
+        android:onClick="goToAlgebra"
+        app:layout_constraintBottom_toTopOf="@+id/btnGeometry"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtHomeTitle"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <Button
+        android:id="@+id/btnGeometry"
+        android:layout_width="239dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="30dp"
+        android:text="Geometry"
+        android:onClick="goToGeometry"
+        app:layout_constraintBottom_toTopOf="@+id/btnPhysics"
+        app:layout_constraintEnd_toEndOf="@+id/btnAlgebra"
+        app:layout_constraintStart_toStartOf="@+id/btnAlgebra"
+        app:layout_constraintTop_toBottomOf="@+id/btnAlgebra" />
+
+    <Button
+        android:id="@+id/btnPhysics"
+        android:layout_width="239dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="30dp"
+        android:text="Physics"
+        android:onClick="goToPhysics"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnGeometry"
+        app:layout_constraintStart_toStartOf="@+id/btnGeometry"
+        app:layout_constraintTop_toBottomOf="@+id/btnGeometry" />
+
+    <TextView
+        android:id="@+id/txtHomeTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="28sp"
+        android:text="FORMULAS"
+        app:layout_constraintBottom_toTopOf="@+id/btnAlgebra"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
