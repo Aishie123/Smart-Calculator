@@ -17,9 +17,4 @@
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_surfacearea" />
 
-    <fragment
-        android:id="@+id/nav_volume"
-        android:name="mcm.edu.ph.dones_physicscalculator.ui.surfaceArea.SurfaceAreaFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_volume" />
 </navigation>
