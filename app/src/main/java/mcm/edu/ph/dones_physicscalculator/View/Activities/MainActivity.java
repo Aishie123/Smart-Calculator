@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.core.view.MenuCompat;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
+import androidx.navigation.NavOptions;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
@@ -19,6 +20,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
 import mcm.edu.ph.dones_physicscalculator.R;
+import mcm.edu.ph.dones_physicscalculator.View.Fragments.VolumeFragment;
 import mcm.edu.ph.dones_physicscalculator.databinding.ActivityMainBinding;
 import mcm.edu.ph.dones_physicscalculator.View.Fragments.PerimeterFragment;
 import mcm.edu.ph.dones_physicscalculator.View.Fragments.AreaFragment;
@@ -46,10 +48,8 @@ public class MainActivity extends AppCompatActivity {
                 .build();
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment_content_main);
         NavController navController = navHostFragment.getNavController();
-        //NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
-
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -63,11 +63,11 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(newIntent);
                         break;
 
-                    case (R.id.nav_perimeter):
-                        fragment = new PerimeterFragment();
-                        break;
+                    case (R.id.nav_perimeter): fragment = new PerimeterFragment(); break;
 
                     case (R.id.nav_area): fragment = new AreaFragment(); break;
+
+                    case (R.id.nav_volume): fragment = new VolumeFragment(); break;
 
                     default:
                         Toast.makeText(MainActivity.this, "Item can't be opened",

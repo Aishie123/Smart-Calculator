@@ -10,4 +10,6 @@
     <string name="menu_home">Home</string>
     <string name="menu_perimeter">Perimeter</string>
     <string name="menu_area">Area</string>
+    <string name="menu_volume">Volume</string>
+
 </resources>

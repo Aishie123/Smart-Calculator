@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.Fragments.AreaFragment"
+    tools:layout_editor_absoluteX="-7dp"
+    tools:layout_editor_absoluteY="8dp">
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gifVolume"
+        android:layout_width="155dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="148dp"
+        android:src="@drawable/gif_perimeter"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/dropdownVolume"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="@+id/dropdownVolume"
+        app:layout_constraintTop_toBottomOf="@+id/dropdownVolume" />
+
+    <ImageView
+        android:id="@+id/volumeCube"
+        android:layout_width="237dp"
+        android:layout_height="237dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/cube"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etVolumeX1" />
+
+    <TextView
+        android:id="@+id/txtVolumeCueSide"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:background="#FFFFFF"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="Side"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/volumeCube"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.704"
+        app:layout_constraintStart_toStartOf="@+id/volumeCube"
+        app:layout_constraintTop_toTopOf="@+id/gifVolume"
+        app:layout_constraintVertical_bias="0.529" />
+
+    <ImageView
+        android:id="@+id/volumeSphere"
+        android:layout_width="237dp"
+        android:layout_height="237dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/sphere"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etVolumeX1" />
+
+    <View
+        android:id="@+id/volumeSpRadius"
+        android:layout_width="4dp"
+        android:layout_height="118.5dp"
+        android:background="@drawable/bracket"
+        android:scaleType="fitXY"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/volumeCube"
+        app:layout_constraintStart_toStartOf="@+id/volumeCube"
+        app:layout_constraintTop_toTopOf="@+id/gifVolume" />
+
+    <TextView
+        android:id="@+id/txtVolumeSpRadius"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:background="#FFFFFF"
+        android:fontFamily="@font/poppins_bold"
+
+        android:padding="5dp"
+        android:text="Radius"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/volumeSpRadius"
+        app:layout_constraintStart_toEndOf="@+id/volumeSpRadius"
+        app:layout_constraintTop_toTopOf="@+id/volumeSpRadius"
+        app:layout_constraintVertical_bias="0.931" />
+
+    <ImageView
+        android:id="@+id/volumeCone"
+        android:layout_width="237dp"
+        android:layout_height="237dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/cone"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etVolumeX1" />
+
+    <View
+        android:id="@+id/volumeCoRadius"
+        android:layout_width="78dp"
+        android:layout_height="4dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/bracket"
+        android:scaleType="fitXY"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/volumeCone"
+        app:layout_constraintEnd_toEndOf="@+id/volumeCone"
+        app:layout_constraintTop_toTopOf="@+id/volumeCone"
+        app:layout_constraintVertical_bias="0.806" />
+
+    <TextView
+        android:id="@+id/txtVolumeCoRadius"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:background="#FFFFFF"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="Radius"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/volumeCoRadius"
+        app:layout_constraintEnd_toEndOf="@+id/volumeCoRadius"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="@+id/volumeCoRadius"
+        app:layout_constraintTop_toTopOf="@+id/volumeCoRadius"
+        app:layout_constraintVertical_bias="0.615" />
+
+    <View
+        android:id="@+id/volumeCoHeight"
+        android:layout_width="4dp"
+        android:layout_height="188dp"
+        android:background="@drawable/bracket"
+        android:scaleType="fitXY"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/volumeCone"
+        app:layout_constraintEnd_toEndOf="@+id/volumeCone"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/volumeCone"
+        app:layout_constraintTop_toTopOf="@+id/volumeCone"
+        app:layout_constraintVertical_bias="0.07" />
+
+    <TextView
+        android:id="@+id/txtVolumeCoHeight"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:background="#FFFFFF"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="Height"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/volumeCone"
+        app:layout_constraintEnd_toEndOf="@+id/volumeCone"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/volumeCone"
+        app:layout_constraintTop_toTopOf="@+id/volumeCone"
+        app:layout_constraintVertical_bias="0.463" />
+
+    <ImageView
+        android:id="@+id/volumeCuboid"
+        android:layout_width="237dp"
+        android:layout_height="237dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/cuboid"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etVolumeX1" />
+
+    <TextView
+        android:id="@+id/txtVolumeCudLength"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:background="#FFFFFF"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="Length"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/volumeCuboid"
+        app:layout_constraintEnd_toEndOf="@+id/volumeCuboid"
+        app:layout_constraintHorizontal_bias="0.764"
+        app:layout_constraintStart_toStartOf="@+id/volumeCuboid"
+        app:layout_constraintTop_toTopOf="@+id/volumeCuboid"
+        app:layout_constraintVertical_bias="0.757" />
+
+    <TextView
+        android:id="@+id/txtVolumeCudWidth"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:background="#FFFFFF"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="Width"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/volumeCuboid"
+        app:layout_constraintEnd_toEndOf="@+id/volumeCuboid"
+        app:layout_constraintHorizontal_bias="0.076"
+        app:layout_constraintStart_toStartOf="@+id/volumeCuboid"
+        app:layout_constraintTop_toTopOf="@+id/volumeCuboid"
+        app:layout_constraintVertical_bias="0.908" />
+
+    <TextView
+        android:id="@+id/txtVolumeCudHeight"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:background="#FFFFFF"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="right"
+        android:text="Height"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/volumeCuboid"
+        app:layout_constraintEnd_toEndOf="@+id/volumeCuboid"
+        app:layout_constraintHorizontal_bias="0.568"
+        app:layout_constraintStart_toEndOf="@+id/volumeCuboid"
+        app:layout_constraintTop_toTopOf="@+id/volumeCuboid"
+        app:layout_constraintVertical_bias="0.4" />
+
+    <ImageView
+        android:id="@+id/volumeCylinder"
+        android:layout_width="237dp"
+        android:layout_height="237dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/cylinder"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etVolumeX1" />
+
+    <View
+        android:id="@+id/volumeCyRadius"
+        android:layout_width="62dp"
+        android:layout_height="4dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/bracket"
+        android:scaleType="fitXY"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/volumeCylinder"
+        app:layout_constraintEnd_toEndOf="@+id/volumeCylinder"
+        app:layout_constraintHorizontal_bias="0.668"
+        app:layout_constraintStart_toStartOf="@+id/volumeCylinder"
+        app:layout_constraintTop_toTopOf="@+id/volumeCylinder"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/txtVolumeCyHeight"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:background="#FFFFFF"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="Height"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/volumeCylinder"
+        app:layout_constraintEnd_toEndOf="@+id/volumeCylinder"
+        app:layout_constraintHorizontal_bias="0.82"
+        app:layout_constraintStart_toStartOf="@+id/volumeCylinder"
+        app:layout_constraintTop_toTopOf="@+id/volumeCylinder"
+        app:layout_constraintVertical_bias="0.516" />
+
+    <TextView
+        android:id="@+id/txtVolumeCyRadius"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:background="#FFFFFF"
+        android:fontFamily="@font/poppins_bold"
+        android:padding="3dp"
+        android:text="Radius"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/volumeCyRadius"
+        app:layout_constraintEnd_toEndOf="@+id/volumeCyRadius"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/volumeCyRadius" />
+
+    <Spinner
+        android:id="@+id/dropdownVolume"
+        android:layout_width="269dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="44dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        android:theme="@style/SpinnerTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/txtVolumeFormula"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:fontFamily="@font/poppins_light"
+        android:gravity="center"
+        android:lines="1"
+        android:padding="5dp"
+        android:text="Formula"
+        android:textSize="20sp"
+        android:visibility="visible"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintEnd_toStartOf="@+id/txtVolumeResult"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtVolume" />
+
+    <TextView
+        android:id="@+id/txtVolume"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/poppins_extrabold"
+        android:gravity="center"
+        android:lines="1"
+        android:padding="5dp"
+        android:text="Volume: "
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/dropdownVolume"
+        app:layout_constraintStart_toStartOf="@+id/dropdownVolume"
+        app:layout_constraintTop_toBottomOf="@+id/dropdownVolume" />
+
+    <EditText
+        android:id="@+id/etVolumeX1"
+        android:layout_width="50dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:fontFamily="@font/poppins"
+        android:gravity="center"
+        android:hint="X1"
+        android:inputType="numberDecimal"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/etVolumeX2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="@+id/txtVolume"
+        app:layout_constraintTop_toBottomOf="@+id/txtVolumeFormula" />
+
+    <EditText
+        android:id="@+id/etVolumeX2"
+        android:layout_width="50dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:fontFamily="@font/poppins"
+        android:gravity="center"
+        android:hint="X2"
+        android:inputType="numberDecimal"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/etVolumeX3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/etVolumeX1"
+        app:layout_constraintTop_toTopOf="@+id/etVolumeX1" />
+
+    <EditText
+        android:id="@+id/etVolumeX3"
+        android:layout_width="50dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:fontFamily="@font/poppins"
+        android:gravity="center"
+        android:hint="X3"
+        android:inputType="numberDecimal"
+        android:textSize="16sp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@+id/txtVolume"
+        app:layout_constraintStart_toEndOf="@+id/etVolumeX2"
+        app:layout_constraintTop_toTopOf="@+id/etVolumeX2" />
+
+    <Button
+        android:id="@+id/btnVolumeSolve"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:backgroundTint="#000000"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:text="Solve"
+        app:layout_constraintEnd_toEndOf="@+id/gifVolume"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="@+id/gifVolume"
+        app:layout_constraintTop_toBottomOf="@+id/gifVolume" />
+
+    <Button
+        android:id="@+id/btnVolumeRestart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#000000"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:text="Restart"
+        app:layout_constraintEnd_toEndOf="@+id/btnVolumeSolve"
+        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintStart_toStartOf="@+id/btnVolumeSolve"
+        app:layout_constraintTop_toBottomOf="@+id/btnVolumeSolve" />
+
+    <TextView
+        android:id="@+id/txtVolumeResult"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:background="#FFFFFF"
+        android:fontFamily="@font/poppins_semibold"
+        android:lines="1"
+        android:padding="5dp"
+        android:text="Result"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/txtVolumeFormula"
+        app:layout_constraintTop_toTopOf="@+id/txtVolumeFormula" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

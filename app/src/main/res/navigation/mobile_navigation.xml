@@ -17,4 +17,10 @@
         android:label="@string/menu_area"
         tools:layout="@layout/fragment_area" />
 
+    <fragment
+        android:id="@+id/nav_volume"
+        android:name="mcm.edu.ph.dones_physicscalculator.View.Fragments.AreaFragment"
+        android:label="@string/menu_volume"
+        tools:layout="@layout/fragment_volume" />
+
 </navigation>
