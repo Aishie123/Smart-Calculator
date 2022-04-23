@@ -12,6 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.core.view.MenuCompat;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
+import androidx.navigation.NavGraph;
+import androidx.navigation.NavInflater;
 import androidx.navigation.NavOptions;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -20,6 +22,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
 import mcm.edu.ph.dones_physicscalculator.R;
+import mcm.edu.ph.dones_physicscalculator.View.Fragments.SDTFragment;
 import mcm.edu.ph.dones_physicscalculator.View.Fragments.VolumeFragment;
 import mcm.edu.ph.dones_physicscalculator.databinding.ActivityMainBinding;
 import mcm.edu.ph.dones_physicscalculator.View.Fragments.PerimeterFragment;
@@ -43,11 +46,33 @@ public class MainActivity extends AppCompatActivity {
         NavigationView navigationView = binding.navView;
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-        mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_home, R.id.nav_perimeter, R.id.nav_area)
+        mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_home, R.id.nav_perimeter, R.id.nav_area, R.id.nav_sdt)
                 .setOpenableLayout(drawer)
                 .build();
-        NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment_content_main);
-        NavController navController = navHostFragment.getNavController();
+
+        NavHostFragment navHost = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment_content_main);
+        NavController navController = navHost.getNavController();
+
+        NavInflater navInflater = navController.getNavInflater();
+        NavGraph graph = navInflater.inflate(R.navigation.mobile_navigation);
+
+        String formulas = getIntent().getExtras().getString("formulas");
+        switch (formulas){
+            case ("algebra"):
+                graph.setStartDestination(R.id.nav_area);
+                break;
+            case ("geometry"):
+                graph.setStartDestination(R.id.nav_perimeter);
+                break;
+            case ("physics"):
+                graph.setStartDestination(R.id.nav_sdt);
+                break;
+        }
+
+        navController.setGraph(graph);
+
+        //NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment_content_main);
+        //NavController navController = navHostFragment.getNavController();
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
@@ -68,6 +93,8 @@ public class MainActivity extends AppCompatActivity {
                     case (R.id.nav_area): fragment = new AreaFragment(); break;
 
                     case (R.id.nav_volume): fragment = new VolumeFragment(); break;
+
+                    case (R.id.nav_sdt): fragment = new SDTFragment(); break;
 
                     default:
                         Toast.makeText(MainActivity.this, "Item can't be opened",

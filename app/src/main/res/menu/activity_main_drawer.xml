@@ -12,7 +12,9 @@
             android:title="Home" />
     </group>
 
-    <group android:checkableBehavior="single">
+    <group
+        android:id="@+id/formulas_geometry"
+        android:checkableBehavior="single">
         <item
             android:id="@+id/nav_perimeter"
             android:title="Perimeter" />
@@ -22,6 +24,21 @@
         <item
             android:id="@+id/nav_volume"
             android:title="Volume" />
-
     </group>
+
+    <group
+        android:title="Ideal Gas Law"
+        android:id="@+id/formulas_physics"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_sdt"
+            android:title="Speed, Distance, Time" />
+        <item
+            android:id="@+id/nav_gas"
+            android:title="Ideal Gas Equation" />
+        <item
+            android:id="@+id/nav_promotion"
+            android:title="Projectile Motion" />
+    </group>
+
 </menu>

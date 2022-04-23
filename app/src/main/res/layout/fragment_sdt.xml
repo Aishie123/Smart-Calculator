@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.Fragments.PerimeterFragment"
+    tools:layout_editor_absoluteX="7dp"
+    tools:layout_editor_absoluteY="0dp">
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gifSDT"
+        android:layout_width="180dp"
+        android:layout_height="168dp"
+        android:layout_marginTop="188dp"
+        android:src="@drawable/gif_car"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@+id/dropdownSDT"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="@+id/dropdownSDT"
+        app:layout_constraintTop_toBottomOf="@+id/dropdownSDT" />
+
+    <Spinner
+        android:id="@+id/dropdownSDT"
+        android:layout_width="269dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="44dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        android:theme="@style/SpinnerTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/txtSDTFormula"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:fontFamily="@font/poppins_light"
+        android:gravity="center"
+        android:padding="5dp"
+        app:autoSizeTextType="uniform"
+        android:text="Formula"
+        android:textSize="18sp"
+        android:visibility="visible"
+        android:lines="1"
+        app:layout_constraintEnd_toStartOf="@+id/txtSDTResult"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtSDT" />
+
+    <TextView
+        android:id="@+id/txtSDT"
+        android:layout_width="273dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/poppins_extrabold"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="Speed/Distance/Time"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/dropdownSDT"
+        app:layout_constraintStart_toStartOf="@+id/dropdownSDT"
+        app:layout_constraintTop_toBottomOf="@+id/dropdownSDT" />
+
+    <EditText
+        android:id="@+id/etSDTX1"
+        android:layout_width="50dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:fontFamily="@font/poppins"
+        android:gravity="center"
+        android:hint="X1"
+        android:inputType="numberDecimal"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/etSDTX2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/txtSDT"
+        app:layout_constraintTop_toBottomOf="@+id/txtSDTFormula" />
+
+    <EditText
+        android:id="@+id/etSDTX2"
+        android:layout_width="50dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:fontFamily="@font/poppins"
+        android:gravity="center"
+        android:hint="X2"
+        android:inputType="numberDecimal"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/txtSDT"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/etSDTX1"
+        app:layout_constraintTop_toTopOf="@+id/etSDTX1" />
+
+    <Button
+        android:id="@+id/btnSDTSolve"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="260dp"
+        android:backgroundTint="#000000"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:text="Solve"
+        app:layout_constraintEnd_toEndOf="@+id/etSDTX2"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="@+id/etSDTX1"
+        app:layout_constraintTop_toBottomOf="@+id/etSDTX1" />
+
+    <Button
+        android:id="@+id/btnSDTRestart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#000000"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:text="Restart"
+        app:layout_constraintEnd_toEndOf="@+id/btnSDTSolve"
+        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintStart_toStartOf="@+id/btnSDTSolve"
+        app:layout_constraintTop_toBottomOf="@+id/btnSDTSolve" />
+
+    <TextView
+        android:id="@+id/txtSDTResult"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:background="#FFFFFF"
+        android:fontFamily="@font/poppins_semibold"
+        android:padding="5dp"
+        android:text="Result"
+        android:textSize="18sp"
+        android:visibility="gone"
+        android:lines="1"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/txtSDTFormula"
+        app:layout_constraintTop_toTopOf="@+id/txtSDTFormula" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

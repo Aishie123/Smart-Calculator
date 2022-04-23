@@ -117,7 +117,7 @@ public class PerimeterFragment extends Fragment implements View.OnClickListener 
         switch (root.getId()) {
 
             // if "Solve" button is pressed
-            case R.id.btnPerimeterSolve:
+            case R.id.btnSDTSolve:
                 solvePerimeter(); // calculates the perimeter
                 break;
 
@@ -277,7 +277,7 @@ public class PerimeterFragment extends Fragment implements View.OnClickListener 
         txtFormula= root.findViewById(R.id.txtPerimeterFormula);
         etX1 = root.findViewById(R.id.etPerimeterX1);
         etX2 = root.findViewById(R.id.etPerimeterX2);
-        btnSolve = root.findViewById(R.id.btnPerimeterSolve);
+        btnSolve = root.findViewById(R.id.btnSDTSolve);
         btnRestart = root.findViewById(R.id.btnPerimeterRestart);
 
         perimeterSquare = root.findViewById(R.id.perimeterSquare);

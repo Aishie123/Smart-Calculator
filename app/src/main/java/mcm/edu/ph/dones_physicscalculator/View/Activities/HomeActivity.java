@@ -18,6 +18,7 @@ public class HomeActivity extends AppCompatActivity {
 
     public void goToAlgebra(View v){
         Intent i = new Intent(HomeActivity.this, MainActivity.class);
+        i.putExtra("formulas", "algebra");
         finish();
         startActivity(i);
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
@@ -25,6 +26,7 @@ public class HomeActivity extends AppCompatActivity {
 
     public void goToGeometry(View v){
         Intent i = new Intent(HomeActivity.this, MainActivity.class);
+        i.putExtra("formulas", "geometry");
         finish();
         startActivity(i);
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
@@ -32,6 +34,7 @@ public class HomeActivity extends AppCompatActivity {
 
     public void goToPhysics(View v){
         Intent i = new Intent(HomeActivity.this, MainActivity.class);
+        i.putExtra("formulas", "physics");
         finish();
         startActivity(i);
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);

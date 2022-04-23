@@ -6,6 +6,7 @@ import java.text.DecimalFormat;
 
 public class Calculation {
 
+    // geometry formulas
     public double getSqPerimeter( double s ) { return roundTwoDecimals( 4 * s ); }
     public double getRePerimeter( double l, double w ) { return roundTwoDecimals( 2 * (l + w) ); }
     public double getCircumference( double r ) { return roundTwoDecimals( 2 * Math.PI * r); }
@@ -37,14 +38,25 @@ public class Calculation {
         return n;
     }
 
-    public double roundTwoDecimals( double d ) {
-        DecimalFormat twoDForm = new DecimalFormat("#.##");
-        return Double.parseDouble(twoDForm.format(d));
-    }
+    // for resizing rectangle
     public int dpToPx( double dp, Context context ) {
         float density = context.getResources().getDisplayMetrics().density;
         return Math.round((float) dp * density);
     }
+
+    // physics formulas
+    public double getSpeed( double d, double t ){ return roundTwoDecimals( d * t ); }
+    public double getDistance( double s, double t ){ return roundTwoDecimals( s / t ); }
+    public double getTime( double s, double d){ return roundTwoDecimals( s / d ); }
+
+    // rounding off
+    public double roundTwoDecimals( double d ) {
+        DecimalFormat twoDForm = new DecimalFormat("#.##");
+        return Double.parseDouble(twoDForm.format(d));
+    }
+
+
+
 
 }
 

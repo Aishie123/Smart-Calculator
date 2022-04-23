@@ -19,8 +19,15 @@
 
     <fragment
         android:id="@+id/nav_volume"
-        android:name="mcm.edu.ph.dones_physicscalculator.View.Fragments.AreaFragment"
+        android:name="mcm.edu.ph.dones_physicscalculator.View.Fragments.VolumeFragment"
         android:label="@string/menu_volume"
         tools:layout="@layout/fragment_volume" />
+
+    <fragment
+        android:id="@+id/nav_sdt"
+        android:name="mcm.edu.ph.dones_physicscalculator.View.Fragments.SDTFragment"
+        android:label="Speed, Distance, Time"
+        tools:layout="@layout/fragment_sdt" />
+
 
 </navigation>
