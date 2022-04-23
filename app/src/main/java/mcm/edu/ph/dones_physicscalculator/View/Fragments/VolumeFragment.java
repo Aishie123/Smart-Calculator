@@ -147,7 +147,7 @@ public class VolumeFragment extends Fragment implements View.OnClickListener{
 
             // if "Solve" button is pressed
             case R.id.btnVolumeSolve:
-                solveVolume(); // calculates the perimeter
+                solveVolume(); // calculates the volume
                 break;
 
             // if "Restart" button is pressed

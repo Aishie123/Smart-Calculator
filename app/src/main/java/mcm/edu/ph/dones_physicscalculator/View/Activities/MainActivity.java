@@ -1,9 +1,13 @@
 package mcm.edu.ph.dones_physicscalculator.View.Activities;
 
+import android.animation.AnimatorListenerAdapter;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.MenuItem;
 import android.view.Menu;
+import android.view.animation.AlphaAnimation;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
@@ -22,6 +26,9 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
 import mcm.edu.ph.dones_physicscalculator.R;
+import mcm.edu.ph.dones_physicscalculator.View.Fragments.GasFragment;
+import mcm.edu.ph.dones_physicscalculator.View.Fragments.KEFragment;
+import mcm.edu.ph.dones_physicscalculator.View.Fragments.PEFragment;
 import mcm.edu.ph.dones_physicscalculator.View.Fragments.SDTFragment;
 import mcm.edu.ph.dones_physicscalculator.View.Fragments.VolumeFragment;
 import mcm.edu.ph.dones_physicscalculator.databinding.ActivityMainBinding;
@@ -32,21 +39,38 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
+    private int shortAnimationDuration = 5000;
+    protected Dialog mSplashDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        MyStateSaver data = (MyStateSaver) getLastNonConfigurationInstance();
+        if (data != null) {
+            // Show splash screen if still loading
+            if (data.showSplashScreen) {
+                showSplashScreen();
+            }
+            initUI();
 
+        } else {
+            showSplashScreen();
+            initUI();
+
+        }
+    }
+
+    public void initUI(){
+        setContentView(binding.getRoot());
         setSupportActionBar(findViewById(R.id.toolbar));
 
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-        mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_home, R.id.nav_perimeter, R.id.nav_area, R.id.nav_sdt)
+        mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_home, R.id.nav_perimeter, R.id.nav_area,
+                R.id.nav_sdt, R.id.nav_gas, R.id.nav_ke, R.id.nav_pe)
                 .setOpenableLayout(drawer)
                 .build();
 
@@ -58,21 +82,18 @@ public class MainActivity extends AppCompatActivity {
 
         String formulas = getIntent().getExtras().getString("formulas");
         switch (formulas){
-            case ("algebra"):
-                graph.setStartDestination(R.id.nav_area);
-                break;
+            //case ("algebra"):
+                //graph.setStartDestination(R.id.nav_area);
+                //break;
             case ("geometry"):
-                graph.setStartDestination(R.id.nav_perimeter);
+                graph.setStartDestination(R.id.nav_perimeter); // starts at the Perimeter fragment
                 break;
             case ("physics"):
-                graph.setStartDestination(R.id.nav_sdt);
+                graph.setStartDestination(R.id.nav_sdt); // starts at the Physics fragment
                 break;
         }
 
         navController.setGraph(graph);
-
-        //NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment_content_main);
-        //NavController navController = navHostFragment.getNavController();
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
@@ -89,12 +110,12 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     case (R.id.nav_perimeter): fragment = new PerimeterFragment(); break;
-
                     case (R.id.nav_area): fragment = new AreaFragment(); break;
-
                     case (R.id.nav_volume): fragment = new VolumeFragment(); break;
-
                     case (R.id.nav_sdt): fragment = new SDTFragment(); break;
+                    case (R.id.nav_gas): fragment = new GasFragment(); break;
+                    case (R.id.nav_ke): fragment = new KEFragment(); break;
+                    case (R.id.nav_pe): fragment = new PEFragment(); break;
 
                     default:
                         Toast.makeText(MainActivity.this, "Item can't be opened",
@@ -114,14 +135,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    //@Override
-    //public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-    //    getMenuInflater().inflate(R.menu.main, menu);
-    //    MenuCompat.setGroupDividerEnabled(menu, true);
-    //    return true;
-    //}
-
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
@@ -136,6 +149,56 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = navHostFragment.getNavController();
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    // methods for splash screen --------------------------------------------------------------------------------------------------------------------
+
+    @Override
+    public Object onRetainCustomNonConfigurationInstance() {
+        MyStateSaver data = new MyStateSaver();
+        // Save your important data here
+
+        if (mSplashDialog != null) {
+            data.showSplashScreen = true;
+            removeSplashScreen();
+        }
+        return data;
+    }
+
+    /**
+     * Removes the Dialog that displays the splash screen
+     */
+    protected void removeSplashScreen() {
+        if (mSplashDialog != null) {
+
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+            mSplashDialog.dismiss();
+            mSplashDialog = null;
+        }
+    }
+
+    /**
+     * Shows the splash screen over the full Activity
+     */
+    protected void showSplashScreen() {
+        mSplashDialog = new Dialog(this, R.style.SplashScreen);
+        mSplashDialog.setContentView(R.layout.splashscreen);
+        mSplashDialog.setCancelable(false);
+        mSplashDialog.show();
+
+        // Set Runnable to remove splash screen just in case
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                removeSplashScreen();
+            }
+        }, 3000);
+    }
+
+    private class MyStateSaver {
+        public boolean showSplashScreen = false;
+        // Your other important fields here
     }
 
 

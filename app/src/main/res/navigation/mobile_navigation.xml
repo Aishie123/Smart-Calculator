@@ -29,5 +29,22 @@
         android:label="Speed, Distance, Time"
         tools:layout="@layout/fragment_sdt" />
 
+    <fragment
+        android:id="@+id/nav_gas"
+        android:name="mcm.edu.ph.dones_physicscalculator.View.Fragments.SDTFragment"
+        android:label="Ideal Gas Equation"
+        tools:layout="@layout/fragment_gas" />
+
+    <fragment
+        android:id="@+id/nav_ke"
+        android:name="mcm.edu.ph.dones_physicscalculator.View.Fragments.KEFragment"
+        android:label="Kinetic Energy"
+        tools:layout="@layout/fragment_ke" />
+
+    <fragment
+        android:id="@+id/nav_pe"
+        android:name="mcm.edu.ph.dones_physicscalculator.View.Fragments.PEFragment"
+        android:label="Potential Energy"
+        tools:layout="@layout/fragment_pe" />
 
 </navigation>

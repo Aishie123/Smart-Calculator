@@ -2,6 +2,7 @@ package mcm.edu.ph.dones_physicscalculator.View.Fragments;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.text.Html;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -74,7 +75,7 @@ public class AreaFragment extends Fragment implements View.OnClickListener{
                         Log.d(TAG, "square is selected");
                         shapeType = 1;
                         txtArea.setText("Area of a square:");
-                        txtFormula.setText( "(s)\u00B2" );
+                        txtFormula.setText(Html.fromHtml("(s)<sup>2</sup>", Html.FROM_HTML_MODE_LEGACY));
                         etX1.setHint("s");
                         etX2.setVisibility(View.GONE);
                         break;
@@ -84,7 +85,7 @@ public class AreaFragment extends Fragment implements View.OnClickListener{
                         Log.d(TAG, "rectangle is selected");
                         shapeType = 2;
                         txtArea.setText("Area of a rectangle:");
-                        txtFormula.setText( "(l * w)" );
+                        txtFormula.setText( "(l • w)" );
                         etX1.setHint("l");
                         etX2.setHint("w");
                         etX2.setVisibility(View.VISIBLE);
@@ -95,7 +96,7 @@ public class AreaFragment extends Fragment implements View.OnClickListener{
                         Log.d(TAG, "circle is selected");
                         shapeType = 3;
                         txtArea.setText("Area of a circle:");
-                        txtFormula.setText( "π(r)\u00B2" );
+                        txtFormula.setText(Html.fromHtml("π(r)<sup>2</sup>", Html.FROM_HTML_MODE_LEGACY));
                         etX1.setHint("r");
                         etX2.setVisibility(View.GONE);
                         break;
@@ -105,7 +106,7 @@ public class AreaFragment extends Fragment implements View.OnClickListener{
                         Log.d(TAG, "triangle is selected");
                         shapeType = 4;
                         txtArea.setText("Area of an equilateral triangle:");
-                        txtFormula.setText( "(\u221a3/4)(a\u00B2)" );
+                        txtFormula.setText(Html.fromHtml("<sup>\u221a3</sup>/<sub>4</sub>(a)<sup>2</sup>", Html.FROM_HTML_MODE_LEGACY));
                         etX1.setHint("a");
                         etX2.setVisibility(View.GONE);
                 }
@@ -152,7 +153,7 @@ public class AreaFragment extends Fragment implements View.OnClickListener{
 
                 case 1: // square
                     result = calc.getSqArea(x1);
-                    txtFormula.setText( "(" + sX1 + ")\u00B2" );
+                    txtFormula.setText(Html.fromHtml("("+x1+")<sup>2</sup>", Html.FROM_HTML_MODE_LEGACY));
                     txtSquareSide.setText(sX1);
                     showSquare();
                     txtResult.setVisibility(View.VISIBLE);
@@ -172,7 +173,7 @@ public class AreaFragment extends Fragment implements View.OnClickListener{
                         dLength = calc.getReLength( x1, x2 );
                         result = calc.getReArea( x1, x2 );
 
-                        txtFormula.setText("(" + sX1 + " * " + sX2 + ")");
+                        txtFormula.setText("(" + sX1 + " • " + sX2 + ")");
                         txtRectangleLength.setText(sX1);
                         txtRectangleWidth.setText(sX2);
 
@@ -194,7 +195,7 @@ public class AreaFragment extends Fragment implements View.OnClickListener{
 
                 case 3: // circle
                     result = calc.getCiArea(x1);
-                    txtFormula.setText( "π(" + sX1 + ")\u00B2" );
+                    txtFormula.setText(Html.fromHtml("π("+x1+")<sup>2</sup>", Html.FROM_HTML_MODE_LEGACY));
                     txtCircleRadius.setText(sX1);
                     showCircle();
                     txtResult.setVisibility(View.VISIBLE);
@@ -202,7 +203,7 @@ public class AreaFragment extends Fragment implements View.OnClickListener{
 
                 case 4: // equilateral triangle
                     result = calc.getTrArea(x1);
-                    txtFormula.setText( "(\u221a3/4)(" + sX1 + "\u00B2)" );
+                    txtFormula.setText(Html.fromHtml("<sup>\u221a3</sup>/<sub>4</sub>("+x1+")<sup>2</sup>", Html.FROM_HTML_MODE_LEGACY));
                     txtEqTriSide1.setText(sX1);
                     txtEqTriSide2.setText(sX1);
                     txtEqTriSide3.setText(sX1);

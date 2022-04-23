@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".View.Fragments.PerimeterFragment"
-    tools:layout_editor_absoluteX="7dp"
-    tools:layout_editor_absoluteY="0dp">
+    tools:context=".View.Fragments.SDTFragment">
 
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/gifSDT"
@@ -127,14 +125,15 @@
     <TextView
         android:id="@+id/txtSDTResult"
         android:layout_width="wrap_content"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:background="#FFFFFF"
         android:fontFamily="@font/poppins_semibold"
+        android:gravity="center"
+        android:lines="1"
         android:padding="5dp"
         android:text="Result"
         android:textSize="18sp"
         android:visibility="gone"
-        android:lines="1"
         app:autoSizeTextType="uniform"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

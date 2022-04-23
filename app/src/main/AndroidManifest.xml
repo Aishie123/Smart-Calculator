@@ -5,14 +5,13 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="Formula Calculator"
+        android:label="Smart Calculator"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Dones_PhysicsCalculator">
         <activity
             android:name=".View.Activities.MainActivity"
             android:exported="true"
-            android:label="Formula Calculator"
             android:theme="@style/Theme.Dones_PhysicsCalculator.NoActionBar"/>
         <activity
             android:name=".View.Activities.HomeActivity"
