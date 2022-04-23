@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.Fragments.PEFragment">
+
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gifPE"
+        android:layout_width="225dp"
+        android:layout_height="198dp"
+        android:layout_marginTop="180dp"
+        android:src="@drawable/gif_pe1"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@+id/dropdownPE"
+        app:layout_constraintStart_toStartOf="@+id/dropdownPE"
+        app:layout_constraintTop_toBottomOf="@+id/dropdownPE" />
+
+    <Spinner
+        android:id="@+id/dropdownPE"
+        android:layout_width="269dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="44dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        android:theme="@style/SpinnerTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/txtPEFormula"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:fontFamily="@font/poppins_light"
+        android:gravity="center"
+        android:lines="1"
+        android:padding="5dp"
+        android:text="Formula"
+        android:textSize="18sp"
+        android:visibility="visible"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintEnd_toStartOf="@+id/txtPEResult"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPE" />
+
+    <TextView
+        android:id="@+id/txtPE"
+        android:layout_width="273dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/poppins_extrabold"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="Potential Energy"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/dropdownPE"
+        app:layout_constraintStart_toStartOf="@+id/dropdownPE"
+        app:layout_constraintTop_toBottomOf="@+id/dropdownPE" />
+
+    <EditText
+        android:id="@+id/etPEX1"
+        android:layout_width="100dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:fontFamily="@font/poppins"
+        android:gravity="center"
+        android:hint="X1"
+        android:inputType="numberDecimal"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/etPEX2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/txtPE"
+        app:layout_constraintTop_toBottomOf="@+id/txtPEFormula" />
+
+    <EditText
+        android:id="@+id/etPEX2"
+        android:layout_width="100dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:fontFamily="@font/poppins"
+        android:gravity="center"
+        android:hint="X2"
+        android:inputType="numberDecimal"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/txtPE"
+        app:layout_constraintStart_toEndOf="@+id/etPEX1"
+        app:layout_constraintTop_toTopOf="@+id/etPEX1" />
+
+    <Button
+        android:id="@+id/btnPESolve"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="268dp"
+        android:backgroundTint="#000000"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:text="Solve"
+        app:layout_constraintEnd_toEndOf="@+id/etPEX2"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="@+id/etPEX1"
+        app:layout_constraintTop_toBottomOf="@+id/etPEX1" />
+
+    <Button
+        android:id="@+id/btnPERestart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#000000"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:text="Restart"
+        app:layout_constraintEnd_toEndOf="@+id/btnPESolve"
+        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintStart_toStartOf="@+id/btnPESolve"
+        app:layout_constraintTop_toBottomOf="@+id/btnPESolve" />
+
+    <TextView
+        android:id="@+id/txtPEResult"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:background="#FFFFFF"
+        android:fontFamily="@font/poppins_semibold"
+        android:gravity="center"
+        android:lines="1"
+        android:padding="5dp"
+        android:text="Result"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/txtPEFormula"
+        app:layout_constraintTop_toTopOf="@+id/txtPEFormula" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -93,7 +93,7 @@ public class SDTFragment extends Fragment implements View.OnClickListener {
                         Log.d(TAG, "Distance is selected");
                         var = 2;
                         txtSDT.setText("Distance:");
-                        txtFormula.setText(Html.fromHtml("distance = <sup>speed</sup>/<sub>time</sub>"));
+                        txtFormula.setText(Html.fromHtml("distance = <sup>speed</sup>/<sub>time</sub>", Html.FROM_HTML_MODE_LEGACY));
                         etX1.setHint("s");
                         etX2.setHint("t");
                         break;
@@ -103,7 +103,7 @@ public class SDTFragment extends Fragment implements View.OnClickListener {
                         Log.d(TAG, "Time is selected");
                         var = 3;
                         txtSDT.setText("Time:");
-                        txtFormula.setText(Html.fromHtml("time = <sup>speed</sup>/<sub>distance</sub>"));
+                        txtFormula.setText(Html.fromHtml("time = <sup>speed</sup>/<sub>distance</sub>", Html.FROM_HTML_MODE_LEGACY));
                         etX1.setHint("s");
                         etX2.setHint("d");
                         break;
@@ -159,13 +159,13 @@ public class SDTFragment extends Fragment implements View.OnClickListener {
 
                 case 2: // distance
                     result = calc.getDistance(x1, x2);
-                    txtFormula.setText(Html.fromHtml("<sup>" + x1 + "</sup>/<sub>" + x2 + "</sub>"));
+                    txtFormula.setText(Html.fromHtml("<sup>" + x1 + "</sup>/<sub>" + x2 + "</sub>", Html.FROM_HTML_MODE_LEGACY));
                     speed = x1;
                     break;
 
                 case 3: // time
                     result = calc.getTime(x1, x2);
-                    txtFormula.setText(Html.fromHtml("<sup>" + x1 + "</sup>/<sub>" + x2 + "</sub>"));
+                    txtFormula.setText(Html.fromHtml("<sup>" + x1 + "</sup>/<sub>" + x2 + "</sub>", Html.FROM_HTML_MODE_LEGACY));
                     speed = x1;
                     break;
             }

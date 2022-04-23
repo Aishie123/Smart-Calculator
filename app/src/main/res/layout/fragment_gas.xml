@@ -1,14 +1,174 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".View.Fragments.GasFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gifGas"
+        android:layout_width="148dp"
+        android:layout_height="106dp"
+        android:layout_marginTop="176dp"
+        android:src="@drawable/gif_science1"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@+id/dropdownGas"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/dropdownGas"
+        app:layout_constraintTop_toBottomOf="@+id/dropdownGas" />
 
-</FrameLayout>
+    <Spinner
+        android:id="@+id/dropdownGas"
+        android:layout_width="269dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="44dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        android:theme="@style/SpinnerTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/txtGasFormula"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:fontFamily="@font/poppins_light"
+        android:gravity="center"
+        android:lines="1"
+        android:padding="5dp"
+        android:text="Formula"
+        android:textSize="18sp"
+        android:visibility="visible"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintEnd_toStartOf="@+id/txtGasResult"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtGas" />
+
+    <TextView
+        android:id="@+id/txtGas"
+        android:layout_width="273dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/poppins_extrabold"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="Ideal Gas Equation"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/dropdownGas"
+        app:layout_constraintStart_toStartOf="@+id/dropdownGas"
+        app:layout_constraintTop_toBottomOf="@+id/dropdownGas" />
+
+    <EditText
+        android:id="@+id/etGasX1"
+        android:layout_width="50dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:fontFamily="@font/poppins"
+        android:gravity="center"
+        android:hint="X1"
+        android:inputType="numberDecimal"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/etGasX2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/txtGas"
+        app:layout_constraintTop_toBottomOf="@+id/txtGasFormula" />
+
+    <EditText
+        android:id="@+id/etGasX2"
+        android:layout_width="50dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:fontFamily="@font/poppins"
+        android:gravity="center"
+        android:hint="X2"
+        android:inputType="numberDecimal"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/etGasX3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/etGasX1"
+        app:layout_constraintTop_toTopOf="@+id/etGasX1" />
+
+    <EditText
+        android:id="@+id/etGasX3"
+        android:layout_width="50dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:fontFamily="@font/poppins"
+        android:gravity="center"
+        android:hint="X3"
+        android:inputType="numberDecimal"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/txtGas"
+        app:layout_constraintHorizontal_bias="0.765"
+        app:layout_constraintStart_toEndOf="@+id/etGasX2"
+        app:layout_constraintTop_toTopOf="@+id/etGasX1" />
+
+    <Button
+        android:id="@+id/btnGasSolve"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="268dp"
+        android:backgroundTint="#000000"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:text="Solve"
+        app:layout_constraintEnd_toEndOf="@+id/etGasX3"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="@+id/etGasX1"
+        app:layout_constraintTop_toBottomOf="@+id/etGasX1" />
+
+    <Button
+        android:id="@+id/btnGasRestart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#000000"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:text="Restart"
+        app:layout_constraintEnd_toEndOf="@+id/btnGasSolve"
+        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintStart_toStartOf="@+id/btnGasSolve"
+        app:layout_constraintTop_toBottomOf="@+id/btnGasSolve" />
+
+    <TextView
+        android:id="@+id/txtGasResult"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:background="#FFFFFF"
+        android:fontFamily="@font/poppins_semibold"
+        android:gravity="center"
+        android:lines="1"
+        android:padding="5dp"
+        android:text="Result"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/txtGasFormula"
+        app:layout_constraintTop_toTopOf="@+id/txtGasFormula" />
+
+    <TextView
+        android:id="@+id/txtIdealGasGuide"
+        android:layout_width="268dp"
+        android:layout_height="91dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins"
+        android:text="P = pressure measured in atmospheres
+        \nV = volume measured in liters
+        \nn = moles of gas present
+        \nR = ideal gas constant (0.0821 atm·L/mol·K)
+        \nT = temperature in degrees Kelvin"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/gifGas"
+        app:layout_constraintStart_toStartOf="@+id/gifGas"
+        app:layout_constraintTop_toBottomOf="@+id/gifGas" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -27,7 +27,6 @@
     </group>
 
     <group
-        android:title="Ideal Gas Law"
         android:id="@+id/formulas_physics"
         android:checkableBehavior="single">
         <item
@@ -37,8 +36,11 @@
             android:id="@+id/nav_gas"
             android:title="Ideal Gas Equation" />
         <item
-            android:id="@+id/nav_promotion"
-            android:title="Projectile Motion" />
+            android:id="@+id/nav_ke"
+            android:title="Kinetic Energy" />
+        <item
+            android:id="@+id/nav_pe"
+            android:title="Potential Energy" />
     </group>
 
 </menu>

@@ -6,6 +6,8 @@ import java.text.DecimalFormat;
 
 public class Calculation {
 
+    private static final double R = 0.0821; // ideal gas constant
+
     // geometry formulas
     public double getSqPerimeter( double s ) { return roundTwoDecimals( 4 * s ); }
     public double getRePerimeter( double l, double w ) { return roundTwoDecimals( 2 * (l + w) ); }
@@ -48,6 +50,19 @@ public class Calculation {
     public double getSpeed( double d, double t ){ return roundTwoDecimals( d * t ); }
     public double getDistance( double s, double t ){ return roundTwoDecimals( s / t ); }
     public double getTime( double s, double d){ return roundTwoDecimals( s / d ); }
+
+    public double getGasPressure( double n, double T, double V ){ return roundTwoDecimals( (n * R * T) / V ); }
+    public double getGasVolume( double n, double T, double P ){ return roundTwoDecimals( (n * R * T) / P ); }
+    public double getGasMoles( double P, double V, double T ){ return roundTwoDecimals( (P * V) / (R * T) ); }
+    public double getGasTemperature( double P, double V, double n ){ return roundTwoDecimals( (P * V) / (R * n) ); }
+
+    public double getKE( double m, double v ){ return roundTwoDecimals( 0.5 * m * (v * v) ); }
+    public double getKEMass( double KE, double v ){ return roundTwoDecimals( (2 * KE) / (v * v) ); }
+    public double getKEVelocity( double KE, double m ){ return roundTwoDecimals( Math.sqrt((2 * KE) / m) ); }
+
+    public double getPE( double m, double h ){ return roundTwoDecimals( m * 9.8 * h ); }
+    public double getPEMass( double PE, double h ){ return roundTwoDecimals( PE / (9.8 * h) ); }
+    public double getPEHeight( double PE, double m ){ return roundTwoDecimals( PE / (9.8 * m) ); }
 
     // rounding off
     public double roundTwoDecimals( double d ) {

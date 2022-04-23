@@ -13,16 +13,17 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate (Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide(); //hide the action bar
         setContentView(R.layout.activity_home);
     }
 
-    public void goToAlgebra(View v){
-        Intent i = new Intent(HomeActivity.this, MainActivity.class);
-        i.putExtra("formulas", "algebra");
-        finish();
-        startActivity(i);
-        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-    }
+    //public void goToAlgebra(View v){
+        //Intent i = new Intent(HomeActivity.this, MainActivity.class);
+        //i.putExtra("formulas", "algebra");
+        //finish();
+        //startActivity(i);
+        //overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+    //}
 
     public void goToGeometry(View v){
         Intent i = new Intent(HomeActivity.this, MainActivity.class);

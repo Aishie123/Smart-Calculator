@@ -22,6 +22,9 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
 import mcm.edu.ph.dones_physicscalculator.R;
+import mcm.edu.ph.dones_physicscalculator.View.Fragments.GasFragment;
+import mcm.edu.ph.dones_physicscalculator.View.Fragments.KEFragment;
+import mcm.edu.ph.dones_physicscalculator.View.Fragments.PEFragment;
 import mcm.edu.ph.dones_physicscalculator.View.Fragments.SDTFragment;
 import mcm.edu.ph.dones_physicscalculator.View.Fragments.VolumeFragment;
 import mcm.edu.ph.dones_physicscalculator.databinding.ActivityMainBinding;
@@ -46,7 +49,8 @@ public class MainActivity extends AppCompatActivity {
         NavigationView navigationView = binding.navView;
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-        mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_home, R.id.nav_perimeter, R.id.nav_area, R.id.nav_sdt)
+        mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_home, R.id.nav_perimeter, R.id.nav_area,
+                R.id.nav_sdt, R.id.nav_gas, R.id.nav_ke, R.id.nav_pe)
                 .setOpenableLayout(drawer)
                 .build();
 
@@ -89,12 +93,12 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     case (R.id.nav_perimeter): fragment = new PerimeterFragment(); break;
-
                     case (R.id.nav_area): fragment = new AreaFragment(); break;
-
                     case (R.id.nav_volume): fragment = new VolumeFragment(); break;
-
                     case (R.id.nav_sdt): fragment = new SDTFragment(); break;
+                    case (R.id.nav_gas): fragment = new GasFragment(); break;
+                    case (R.id.nav_ke): fragment = new KEFragment(); break;
+                    case (R.id.nav_pe): fragment = new PEFragment(); break;
 
                     default:
                         Toast.makeText(MainActivity.this, "Item can't be opened",

@@ -84,7 +84,7 @@ public class AreaFragment extends Fragment implements View.OnClickListener{
                         Log.d(TAG, "rectangle is selected");
                         shapeType = 2;
                         txtArea.setText("Area of a rectangle:");
-                        txtFormula.setText( "(l * w)" );
+                        txtFormula.setText( "(l • w)" );
                         etX1.setHint("l");
                         etX2.setHint("w");
                         etX2.setVisibility(View.VISIBLE);
