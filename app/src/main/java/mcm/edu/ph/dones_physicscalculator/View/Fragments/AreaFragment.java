@@ -37,7 +37,7 @@ public class AreaFragment extends Fragment implements View.OnClickListener{
     private View root, areaSquare, squareBracket1, squareBracket2, squareBracket3, areaRectangle, rectangleBracket1, rectangleBracket2,
             rectangleBracket3, rectangleBracket4, rectangleBracket5, rectangleBracket6, areaCircle, circleBracket1, areaEqTriangle;
     private Button btnSolve, btnRestart;
-    private String TAG = "PerimeterFragment";
+    private String TAG = "AreaFragment";
     private double result, dLength, dWidth;
     private int shapeType;
     private final Calculation calc = new Calculation();
@@ -126,7 +126,7 @@ public class AreaFragment extends Fragment implements View.OnClickListener{
 
             // if "Solve" button is pressed
             case R.id.btnAreaSolve:
-                solveArea(); // calculates the perimeter
+                solveArea(); // calculates the area
                 break;
 
             // if "Restart" button is pressed
