@@ -4,14 +4,11 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
-import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import android.os.Handler;
-import android.os.Looper;
 import android.text.Html;
 import android.text.TextUtils;
 import android.util.Log;
@@ -27,7 +24,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import mcm.edu.ph.dones_physicscalculator.Calculation;
+import mcm.edu.ph.dones_physicscalculator.Controller.Calculation;
 import mcm.edu.ph.dones_physicscalculator.R;
 import mcm.edu.ph.dones_physicscalculator.View.Activities.MainActivity;
 import mcm.edu.ph.dones_physicscalculator.databinding.FragmentSdtBinding;

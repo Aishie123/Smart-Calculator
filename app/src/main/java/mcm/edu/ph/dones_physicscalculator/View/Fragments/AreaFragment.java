@@ -20,7 +20,7 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
-import mcm.edu.ph.dones_physicscalculator.Calculation;
+import mcm.edu.ph.dones_physicscalculator.Controller.Calculation;
 import mcm.edu.ph.dones_physicscalculator.R;
 import mcm.edu.ph.dones_physicscalculator.View.Activities.MainActivity;
 import mcm.edu.ph.dones_physicscalculator.databinding.FragmentAreaBinding;

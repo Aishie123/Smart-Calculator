@@ -20,7 +20,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import mcm.edu.ph.dones_physicscalculator.Calculation;
+import mcm.edu.ph.dones_physicscalculator.Controller.Calculation;
 import mcm.edu.ph.dones_physicscalculator.R;
 import mcm.edu.ph.dones_physicscalculator.View.Activities.MainActivity;
 import mcm.edu.ph.dones_physicscalculator.databinding.FragmentGasBinding;

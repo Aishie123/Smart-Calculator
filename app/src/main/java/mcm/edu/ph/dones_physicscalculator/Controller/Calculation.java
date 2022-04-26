@@ -1,4 +1,4 @@
-package mcm.edu.ph.dones_physicscalculator;
+package mcm.edu.ph.dones_physicscalculator.Controller;
 
 import android.content.Context;
 
